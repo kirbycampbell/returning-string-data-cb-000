@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   get '/posts/:id/body', to: 'posts#body'
 
-  root '/posts'
+  root 'posts#index'
 end
