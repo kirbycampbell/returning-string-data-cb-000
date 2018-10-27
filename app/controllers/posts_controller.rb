@@ -8,10 +8,6 @@ class PostsController < ApplicationController
   def show
   end
 
-  def body
-    post = Post.find(params[:id])
-    render plain: post.description
-  end
 
   def new
     @post = Post.new
@@ -29,6 +25,11 @@ class PostsController < ApplicationController
   def update
     @post.update(post_params)
     redirect_to post_path(@post)
+  end
+
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
   end
 
 private
